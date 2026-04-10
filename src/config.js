@@ -16,7 +16,7 @@ export function parseArgs(argv) {
 }
 
 export function readFileConfig(filePath) {
-  const raw = fs.readFileSync(filePath, "utf8");
+  const raw = fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
   return JSON.parse(raw);
 }
 
